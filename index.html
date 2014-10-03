@@ -1,0 +1,942 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <title>High Power</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="/f/js/jquery.slides.min.js"></script>
+  <script type="text/javascript" src="/f/js/common.js"></script>
+  <link rel="stylesheet" type="text/css" href="/f/css/main.css" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,300,700,300italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <script src="/f/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="/f/js/custom_el.js"></script>
+</head>
+<body>
+  <header class="b-header">
+    <h1 class="b-logo">
+      High Power
+      <span class="b-logo__char">SD</span>
+      <p class="b-logo__text">Недвижимость в Испании</p>
+    </h1>
+    <ul class="b-main-menu">
+      <li class="b-main-menu__item">
+        <div class="iconize-realty"></div>
+        <a href="#" class="b-link">Недвижимость</a>
+      </li>
+      <li class="b-main-menu__item">
+        <div class="iconize-boat"></div>
+        <a href="#" class="b-link">Яхты</a>
+      </li>
+      <li class="b-main-menu__item">
+        <div class="iconize-lease"></div>
+        <a href="#" class="b-link">Аренда</a>
+      </li>
+      <li class="b-main-menu__item">
+        <a href="#" class="b-link">О компании</a>
+      </li>
+      <li class="b-main-menu__item">
+        <a href="#" class="b-link">Услуги</a>
+      </li>
+      <li class="b-main-menu__item">
+        <a href="#" class="b-link">Контакты</a>
+      </li>
+    </ul>
+    <div class="b-contacts b-contacts_header">
+      <div class="b-contacts__item">
+        <p class="b-contacts__city">
+          <span class="iconize-moscow"></span>
+          <span class="b-contacts__city-text">Москва</span>
+        </p>
+        <p class="b-contacts__phone">
+          <span class="b-contacts__phone-small">+7 (495)</span>540-34-23
+          <span class="iconize-skype"></span>
+        </p>
+      </div>
+      <div class="b-contacts__item">
+        <p class="b-contacts__city">
+          <span class="iconize-alicante"></span>
+          <span class="b-contacts__city-text">Аликанте</span>
+        </p>
+        <p class="b-contacts__phone">
+          <span class="b-contacts__phone-small">+34 (965)</span>23-57-00
+          <span class="iconize-skype"></span>
+        </p>
+      </div>
+      <div class="b-contacts__callback">
+        <a href="#" class="b-link">Заказать обратный звонок</a>
+      </div>
+    </div>
+  </header>
+  <div id="popup-credit" style="display:none;">
+    <form action="." method="post" id="mail_form" class="b-forma">
+      <a href="#" class="b-forma_close cancelComment" id="toggler"></a>
+      <p class="b-forma__head" id="demo-link">Заказать</br>обратный звонок</p>
+      <p class="b-forma__title">Имя</p>
+      <input class="b-forma__input" type="text" size="25" name="name" id="name" value=" ">
+      <p class="b-forma__title">Телефон</p>
+      <input class="b-forma__input" type="text" size="25" name="tel" id="tel" value=" ">
+      <p class="b-forma__title">Комментарии к звонку</p>
+      <textarea class="b-forma__input b-forma__comments" cols="30" rows="5" name="text" id="text" value="Темы и время звонка"></textarea>
+      <input class="b-forma__submit yellow-btn" type="submit" name="submit" id="submit" value="Отправить">
+    </form>
+  </div>
+  <div class="b-slider">
+    <ul id="slides" class="b-slider__central">
+      <li>
+        <img src="f/img/7.jpg">
+      </li>
+      <li>
+        <img src="f/img/7.jpg">
+      </li>
+      <li>
+        <img src="f/img/7.jpg">
+      </li>
+      <li>
+        <img src="f/img/7.jpg">
+      </li>
+    </ul>
+    <div class="b-slider__text">25 000 <p>объектов недвижимости</p></div>
+    <div class="b-slider__tab">
+      <div id="wrapper" class="tab1">
+        <a href="#" id="win_a" class="tab1">
+          <span class="wrapper_a">На побережье</span>
+        </a><a href="#" id="win_a" class="tab2">
+          <span class="wrapper_a">По географии</span>
+        </a>
+        <div class="div_none tab1 b-tab__coast">
+          <p class="b-coast__img"></p>
+          <div class="material">
+            <select id="id_select1" class="form_line">
+              <option>Хлопок</option>
+              <option>Железо</option>
+              <option>Дерево</option>
+              <option>Стекло</option>
+            </select>
+          </div>
+          <div class="material">
+            <select id="id_select2" class="form_line">
+              <option>Хлопок</option>
+              <option>Железо</option>
+              <option>Дерево</option>
+              <option>Стекло</option>
+            </select>
+          </div>
+          <div class="b-coast__button" style="clear: both;">
+            <button class="yellow-btn"><span class="iconize-search"></span>Найти</button>
+          </div>
+        </div>
+        <div class="div_none tab2 b-tab__geography">dsfsdfdsfsdfdsf</div>
+      </div>
+      <div class="b-coast__border_bottom"></div>
+    </div>
+    <div class="b-slider__border_bottom"></div>
+    <div class="b-slider__info">
+      <p class="b-info__city">Zamora, Spain</p><p class="b-info__see"><b class="b-info__see_img"></b><a href="#" class="b-info__see_link b-link">Посмотреть недвижимость тут</a>
+      </p>
+    </div>
+  </div>
+  <div class="b-services b-enum b-enum_inline_4">
+    <div class="b-enum__item">
+      <img src="/f/img/img-5.jpg" alt="" class="b-enum__img">
+      <h2 class="b-enum__title">Юридическое сопровождение</h2>
+      <p class="b-enum__text">Комплекс юридических и консультационных услуг. Сделка от и до.</p>
+    </div><div class="b-enum__item">
+      <img src="/f/img/img-6.jpg" alt="" class="b-enum__img">
+      <h2 class="b-enum__title">Получение ВНЖ</h2>
+      <p class="b-enum__text">При покупке недвижимости от &euro;150 тыс. возможно получение первой резиденции.</p>
+    </div><div class="b-enum__item">
+      <img src="/f/img/img-7.jpg" alt="" class="b-enum__img">
+      <h2 class="b-enum__title">Гарантия нзкой цены</h2>
+      <p class="b-enum__text">Предложение объектов банка. Залоговая недвижимость банков по выгодным ценам.</p>
+    </div><div class="b-enum__item">
+      <img src="/f/img/img-8.jpg" alt="" class="b-enum__img">
+      <h2 class="b-enum__title">Дополнительные услуги</h2>
+      <p class="b-enum__text">Максимально комфортное пребывание в Испании. Комплекс дополнительных услуг.</p>
+    </div>
+  </div>
+  <div class="b_offer b-offer">
+    <h2 class="b-offer__header b_offer_h2">Самые актуальные предложения в Испании</h2>
+    <div class="b-offer__container  container1">
+      <ul id="offer">
+        <li>
+          <div class="b-goods">
+            <div class="b-goods__picture">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Duplex Pedro Munoz
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">El Parc de la Tossa
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Edificio Navas - Ramon Vall
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Roda de Ter</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">32 300 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Can Sabat 25
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Valencia</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">41 600 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Edificio Odena - Resicas
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Viviendas en Artes
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Duplex Pedro Munoz
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">El Parc de la Tossa
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div>
+        </li>
+        <li>
+          <div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Duplex Pedro Munoz
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">El Parc de la Tossa
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Edificio Navas - Ramon Vall
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Roda de Ter</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">32 300 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Can Sabat 25
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Valencia</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">41 600 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Edificio Odena - Resicas
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Viviendas en Artes
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Duplex Pedro Munoz
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">El Parc de la Tossa
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div>
+        </li>
+        <li>
+          <div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Duplex Pedro Munoz
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">El Parc de la Tossa
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Edificio Navas - Ramon Vall
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Roda de Ter</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">32 300 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Can Sabat 25
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Valencia</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">41 600 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Edificio Odena - Resicas
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Viviendas en Artes
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">Duplex Pedro Munoz
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">12 000 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-picture__tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <ul class="b-goods__description">
+              <li class="b-description__header">El Parc de la Tossa
+                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
+              </li>
+              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
+              <li class="b-description__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </li>
+              <li class="b-description__subtext">Количество Комнат -
+                <span>2</span>
+              </li>
+              <li class="b-description__price">13 400 &#8364;</li>
+            </ul>
+            <div class="b-goods__border"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <section class="b-spain">
+    <h2 class="b-spain__title"><span class="iconize-spain"></span>Испания</h2>
+    <p class="b-spain__text">Испания – многогранная и очень красивая страна, каждый раз играющая новыми красками и раскрывающаяся для своих гостей постепенно, не сразу. Яркая, темпераментная и самобытная, такая же, как характер ее жителей. Она не устает удивлять и радовать, навсегда вовлекая Вас в этот водоворот неиссякаемой энергии, истинных страстей и неподдельных эмоций. Попав в нее единожды, Вы вряд ли успеете узнать об этой поистине волшебной стране все, что Вам хотелось. Вам захочется вернуться сюда снова, а вернувшись снова, Вы полюбите ее навсегда и уже не захотите уезжать обратно.</p>
+    <section class="b-enum b-enum_inline_5">
+      <div class="b-enum__item">
+        <img src="/f/img/img-10.jpg" alt="" class="b-enum__img">
+        <h3 class="b-enum__title">Географическое положение и климат</h3>
+      </div><div class="b-enum__item">
+        <img src="/f/img/img-11.jpg" alt="" class="b-enum__img">
+        <h3 class="b-enum__title">Богата история и культура</h3>
+      </div><div class="b-enum__item">
+        <img src="/f/img/img-12.jpg" alt="" class="b-enum__img">
+        <h3 class="b-enum__title">Национальный колорит</h3>
+      </div><div class="b-enum__item">
+        <img src="/f/img/img-13.jpg" alt="" class="b-enum__img">
+        <h3 class="b-enum__title">Рынок недвижимости и политика государства</h3>
+      </div><div class="b-enum__item">
+        <img src="/f/img/img-14.jpg" alt="" class="b-enum__img">
+        <h3 class="b-enum__title">Уровень экономического развития</h3>
+      </div>
+    </section>
+  </section>
+  <footer class="b-footer">
+    <div class="b-footer__table">
+      <div class="b-footer__row">
+        <div class="b-footer__cell">
+          <h3 class="b-footer__title">Недвижимость</h3>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Квартиры (аппартаменты)</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Дома</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Виллы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Таунхаусы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Коммерческая недвижимость</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <h3 class="b-footer__title">Аренда</h3>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Недвижимость</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Яхты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Самолёты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Вертолёты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Автомобили</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <h3 class="b-footer__title">Услуги</h3>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Услуги банка</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Бронирование гостиницы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Документы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Покупка авиабилетов</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <h3 class="b-footer__title">О компании</h3>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Сертификаты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Команды</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Отзывы клиентов</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Новости</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <h3 class="b-footer__title">Яхта</h3>
+        </div>
+        <div class="b-footer__cell">
+          <div class="b-contacts b-contacts_footer">
+            <div class="b-contacts__item">
+              <p class="b-contacts__city">
+                <span class="iconize-moscow"></span>
+                <span class="b-contacts__city-text">Москва</span>
+              </p><p class="b-contacts__phone">
+                <span class="b-contacts__phone-small">+7 (495)</span>540-34-23
+                <span class="iconize-skype"></span>
+              </p>
+            </div>
+            <div class="b-contacts__item">
+              <p class="b-contacts__city">
+                <span class="iconize-alicante"></span>
+                <span class="b-contacts__city-text">Аликанте</span>
+              </p><p class="b-contacts__phone">
+                <span class="b-contacts__phone-small">+34 (965)</span>23-57-00
+                <span class="iconize-skype"></span>
+              </p>
+            </div>
+            <div class="b-contacts__callback">
+              <a href="#" class="b-link">Заказать обратный звонок</a>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  $('#wrapper a').click(function() {
+    if ($(this).attr('class') != $('#wrapper').attr('class')) {
+      $('#wrapper').attr('class', $(this).attr('class'));
+    }
+  });
+  </script>
+</body>
+</html>
