@@ -5,19 +5,35 @@
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="/f/js/jquery.slides.min.js"></script>
   <script type="text/javascript" src="/f/js/common.js"></script>
+  <script type="text/javascript" src="/f/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/f/js/bootstrap-select.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/f/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/f/css/bootstrap-select.min.css" />
   <link rel="stylesheet" type="text/css" href="/f/css/main.css" />
+
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,300,700,300italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,600,300,700,300italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <script src="/f/js/jquery-ui.js"></script>
-  <script type="text/javascript" src="/f/js/custom_el.js"></script>
+   <script>
+    $(function(){
+      $(".b-filter__select_1").selectpicker({
+        style: "b-select-input"
+      });
+      $(".b-filter__select_2").selectpicker({
+        style: "b-select-input"
+      });
+    });
+  </script>
 </head>
 <body>
   <header class="b-header">
-    <h1 class="b-logo">
-      High Power
-      <span class="b-logo__char">SD</span>
-      <p class="b-logo__text">Недвижимость в Испании</p>
-    </h1>
+    <a href="/">
+      <h1 class="b-logo">
+        High Power
+        <span class="b-logo__char">SD</span>
+        <p class="b-logo__text">Недвижимость в Испании</p>
+      </h1>
+    </a>
     <ul class="b-main-menu">
       <li class="b-main-menu__item">
         <div class="iconize-realty"></div>
@@ -96,7 +112,7 @@
       </li>
     </ul>
     <div class="b-slider__text">25 000 <p>объектов недвижимости</p></div>
-    <div class="b-slider__tab">
+    <div class="b-filter">
       <div id="wrapper" class="tab1">
         <a href="#" id="win_a" class="tab1">
           <span class="wrapper_a">На побережье</span>
@@ -105,24 +121,20 @@
         </a>
         <div class="div_none tab1 b-tab__coast">
           <p class="b-coast__img"></p>
-          <div class="material">
-            <select id="id_select1" class="form_line">
-              <option>Хлопок</option>
-              <option>Железо</option>
-              <option>Дерево</option>
-              <option>Стекло</option>
+          <div class="b-filter__control">
+            <select class="b-filter__select b-filter__select_1 b-select-input" multiple  title="Город">
+              <option>Галисия</option>
+              <option>Астурия</option>
+              <option>Арагон</option>
             </select>
-          </div>
-          <div class="material">
-            <select id="id_select2" class="form_line">
-              <option>Хлопок</option>
-              <option>Железо</option>
-              <option>Дерево</option>
-              <option>Стекло</option>
+            <select class="b-filter__select b-filter__select_2 b-select-input" multiple title="Регион">
+              <option>Галисия</option>
+              <option>Астурия</option>
+              <option>Арагон</option>
             </select>
-          </div>
-          <div class="b-coast__button" style="clear: both;">
-            <button class="yellow-btn"><span class="iconize-search"></span>Найти</button>
+            <div class="b-coast__button" style="clear: both;">
+              <button class="yellow-btn"><span class="iconize-search"></span>Найти</button>
+            </div>
           </div>
         </div>
         <div class="div_none tab2 b-tab__geography">dsfsdfdsfsdfdsf</div>
@@ -131,7 +143,7 @@
     </div>
     <div class="b-slider__border_bottom"></div>
     <div class="b-slider__info">
-      <p class="b-info__city">Zamora, Spain</p><p class="b-info__see"><b class="b-info__see_img"></b><a href="#" class="b-info__see_link b-link">Посмотреть недвижимость тут</a>
+      <p class="b-info__city">Zamora, Spain</p><p class="b-info__see"><a href="#" class="b-info__see_link b-link"><b class="b-info__see_img"></b>Посмотреть недвижимость тут</a>
       </p>
     </div>
   </div>
@@ -146,7 +158,7 @@
       <p class="b-enum__text">При покупке недвижимости от &euro;150 тыс. возможно получение первой резиденции.</p>
     </div><div class="b-enum__item">
       <img src="/f/img/img-7.jpg" alt="" class="b-enum__img">
-      <h2 class="b-enum__title">Гарантия нзкой цены</h2>
+      <h2 class="b-enum__title">Гарантия низкой цены</h2>
       <p class="b-enum__text">Предложение объектов банка. Залоговая недвижимость банков по выгодным ценам.</p>
     </div><div class="b-enum__item">
       <img src="/f/img/img-8.jpg" alt="" class="b-enum__img">
@@ -159,10 +171,91 @@
     <div class="b-offer__container  container1">
       <ul id="offer">
         <li>
-          <div class="b-goods">
+          <div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Вилла</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa 
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Таунхаус</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods">
             <div class="b-goods__picture">
               <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -171,25 +264,25 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Duplex Pedro Munoz
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">Duplex Pedro Munoz
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">12 000 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/2.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -198,25 +291,25 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">El Parc de la Tossa
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/1.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -225,25 +318,52 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Edificio Navas - Ramon Vall
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Roda de Ter</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">32 300 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -252,164 +372,29 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Can Sabat 25
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Valencia</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">41 600 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Edificio Odena - Resicas
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Viviendas en Artes
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
+              <div class="b-goods__price">41 600 &#8364;</div>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Duplex Pedro Munoz
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/2.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
-              </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">El Parc de la Tossa
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
             <div class="b-goods__border"></div>
           </div>
-        </li>
+        </li> 
         <li>
           <div class="b-goods ">
             <div class="b-goods__picture ">
-              <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
-              </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Duplex Pedro Munoz
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
               <img src="/f/img/2.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Вилла</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
               </div>
               <a href="#" class="">
                 <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
@@ -417,26 +402,26 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">El Parc de la Tossa
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/1.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Таунхаус</p>
               </div>
               <a href="#" class="">
                 <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
@@ -444,26 +429,26 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Edificio Navas - Ramon Vall
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Roda de Ter</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">32 300 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
               </div>
               <a href="#" class="">
                 <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
@@ -471,79 +456,25 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Can Sabat 25
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Valencia</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">41 600 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Edificio Odena - Resicas
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Viviendas en Artes
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
+          </div><div class="b-goods">
+            <div class="b-goods__picture">
               <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -552,25 +483,25 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Duplex Pedro Munoz
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">Duplex Pedro Munoz
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">12 000 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/2.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -579,56 +510,110 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">El Parc de la Tossa
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div>
-        </li>
+        </li> 
         <li>
           <div class="b-goods ">
             <div class="b-goods__picture ">
-              <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
-              </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Duplex Pedro Munoz
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
               <img src="/f/img/2.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Вилла</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
               </div>
               <a href="#" class="">
                 <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
@@ -636,26 +621,26 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">El Parc de la Tossa
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/1.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Таунхаус</p>
               </div>
               <a href="#" class="">
                 <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
@@ -663,26 +648,26 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Edificio Navas - Ramon Vall
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Roda de Ter</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">32 300 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
               </div>
               <a href="#" class="">
                 <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
@@ -690,79 +675,25 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Can Sabat 25
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Valencia</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">41 600 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Edificio Odena - Resicas
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
-                <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/4.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Viviendas en Artes
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
+          </div><div class="b-goods">
+            <div class="b-goods__picture">
               <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -771,25 +702,25 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">Duplex Pedro Munoz
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">Duplex Pedro Munoz
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">12 000 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">12 000 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
             <div class="b-goods__picture ">
-              <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-picture__tags">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
               <a href="#" class="">
@@ -798,23 +729,104 @@
               <span class="b-picture__fon"></span>
               <b class="b-subblocks__tick"></b>
             </div>
-            <ul class="b-goods__description">
-              <li class="b-description__header">El Parc de la Tossa
-                <b class="b-header__subtext" onclick="this.className = (this.className == 'b-header__subtext' ? 'b-header__subtext_active' : 'b-header__subtext')"></b>
-              </li>
-              <li class="b-description__city"><b class="b-description__city_img"></b>Manresa</li>
-              <li class="b-description__subtext">Площадь -
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
                 </span>
-              </li>
-              <li class="b-description__subtext">Количество Комнат -
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
                 <span>2</span>
-              </li>
-              <li class="b-description__price">13 400 &#8364;</li>
-            </ul>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
             <div class="b-goods__border"></div>
           </div>
-        </li>
+        </li> 
       </ul>
     </div>
   </div>
@@ -844,7 +856,7 @@
     <div class="b-footer__table">
       <div class="b-footer__row">
         <div class="b-footer__cell">
-          <h3 class="b-footer__title">Недвижимость</h3>
+          <p class="b-footer__title">Недвижимость</p>
           <ul class="b-footer-menu">
             <li class="b-footer-menu__item"><a href="#" class="b-link">Квартиры (аппартаменты)</a>
             </li>
@@ -859,7 +871,7 @@
           </ul>
         </div>
         <div class="b-footer__cell">
-          <h3 class="b-footer__title">Аренда</h3>
+          <p class="b-footer__title">Аренда</p>
           <ul class="b-footer-menu">
             <li class="b-footer-menu__item"><a href="#" class="b-link">Недвижимость</a>
             </li>
@@ -874,7 +886,7 @@
           </ul>
         </div>
         <div class="b-footer__cell">
-          <h3 class="b-footer__title">Услуги</h3>
+          <p class="b-footer__title">Услуги</p>
           <ul class="b-footer-menu">
             <li class="b-footer-menu__item"><a href="#" class="b-link">Услуги банка</a>
             </li>
@@ -887,7 +899,7 @@
           </ul>
         </div>
         <div class="b-footer__cell">
-          <h3 class="b-footer__title">О компании</h3>
+          <p class="b-footer__title">О компании</p>
           <ul class="b-footer-menu">
             <li class="b-footer-menu__item"><a href="#" class="b-link">Сертификаты</a>
             </li>
@@ -900,7 +912,7 @@
           </ul>
         </div>
         <div class="b-footer__cell">
-          <h3 class="b-footer__title">Яхта</h3>
+          <p class="b-footer__title">Яхта</p>
         </div>
         <div class="b-footer__cell">
           <div class="b-contacts b-contacts_footer">
