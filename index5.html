@@ -8,15 +8,92 @@
   <script type="text/javascript" src="/f/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/f/js/bootstrap-select.min.js"></script>
   <script src="/f/js/jquery-ui.js"></script>
-  <link rel="stylesheet" type="text/css" href="/f/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/f/js/jquery.tmpl.min.js"></script>
+  <script type="text/javascript" src="/f/js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="/f/js/jquery.elastislide.js"></script>
+  <script type="text/javascript" src="/f/js/gallery.js"></script>
   <link rel="stylesheet" type="text/css" href="/f/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" type="text/css" href="/f/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="/f/css/jquery-ui.css" />
   <link rel="stylesheet" type="text/css" href="/f/css/main.css" />
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,300,700,300italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script type="text/javascript">
+  function initialize() {
+    var defPos = new google.maps.LatLng(57.0442, 9.9116);
+    var settings = {
+    zoom: 15,
+    center: defPos,
+    mapTypeControl: true,
+    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+    navigationControl: true,
+    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), settings);
+    var Mark = new google.maps.MarkerImage("/f/img/map-marker.png",
+    new google.maps.Size(30,48),
+    new google.maps.Point(0,0),
+    new google.maps.Point(50,50)
+    );
+    var Shadow = new google.maps.MarkerImage("/f/img/map-marker.png",
+    new google.maps.Size(30,48),
+    new google.maps.Point(30,0),
+    new google.maps.Point(50, 50)
+    );
+    var Hover = new google.maps.MarkerImage("/f/img/map-marker.png",
+    new google.maps.Size(30,48),
+    new google.maps.Point(60,0),
+    new google.maps.Point(50, 50)
+    );
+    var Pos1 = new google.maps.LatLng(57.0442, 9.9116);
+    var Marker1 = new google.maps.Marker({
+      position: Pos1,
+      map: map,
+      icon: Mark,
+      shadow: Shadow,
+      title:"Pos1"
+    });
+    google.maps.event.addListener(Marker1, 'mouseover', function() {
+      Marker1.setIcon(Hover);
+    });
+
+    google.maps.event.addListener(Marker1, 'mouseout', function() {
+      Marker1.setIcon(Mark);
+    });
+  }
+
+  </script>
+  <noscript>
+      <style>
+        .es-carousel ul{
+          display:block;
+        }
+      </style>
+    </noscript>
+    <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">  
+      <div class="rg-image-wrapper">
+        <div class="rg-image"></div>
+        <div class="rg-loading"></div>
+        <div class="rg-caption-wrapper">
+          <div class="rg-caption" style="display:none;">
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </script>
 </head>
-<body>
+<body onload="initialize()">
   <header class="b-header">
+    <div class="b-fav-line">
+      <div class="b-fav-line__content">
+        <p class="b-fav-line__text"><span class="iconize-fav"></span>Избранное (5)</p>
+        <a href="#" class="b-fav-line__link b-link">Перейти в избранное</a>
+        <a href="#" class="b-fav-line__link b-link">Удалить все объекты из избранного</a>
+      </div> 
+    </div>
     <div class="b-header__content">
       <a href="/">
         <p class="b-logo">
@@ -78,107 +155,128 @@
   <h1 class="b-main-title b-main-title_arrow_grey">Недвижимость</h1>
   <section class="b-realty">
     <div class="b-control">
-      <div class="b-view">
-        <span class="b-view__text">Показывать</span>
-        <div class="b-view__control">
-          <div class="b-view__btn iconize-tiles iconize-tiles_active"></div><a href="/index3.html" class="b-view__btn iconize-list"></a><a href="/index4.html" class="b-view__btn iconize-map"></a>
-        </div>
-      </div>
-      <div class="b-sort">
-        <span class="b-sort__text">Сортировка</span>
-        <select class="b-sort__select b-select-input">
-          <option>Количество комнат по возрастанию</option>
-          <option>Количество комнат по убыванию</option>
-          <option>Количество комнат по возрастанию</option>
-          <option>Количество комнат по убыванию</option>
-        </select>
-      </div>
+      <a href="/index2.html" class="b-control__back b-iconized-link"><span class="iconize-back"></span><span class="b-link">Вернуться к списку объектов</span></a>
     </div>
-    <div class="b-realty__content">
-      <div class="b-realty__found">Найдено 24 объекта</div>
-      <section class="b-realty__goods">
-        <div class="b-goods">
-            <div class="b-goods__picture">
-              <img src="/f/img/3.jpg" class="b-picture__img">
+    <div class="b-realty__content b-realty__content_full">
+      <div class="b-realty__detail">
+        <p class="b-realty__detail-lot">Лот  №45205</p>
+        <h2 class="b-realty__detail-name">Residencial Golf Mar - Panorámica Golf</h2>
+        <a href="#" class="b-realty__detail-city b-iconized-link"><span class="iconize-marker"></span><span class="b-link">Valencia</span></a>
+        <p class="b-realty__detail-enum">Общая площадь — <span>150 м<sup>2</sup></span></p>
+        <p class="b-realty__detail-enum">Количество спален — <span>2</span></p>
+        <p class="b-realty__detail-enum">Удаленность от пляжа — <span>1100 м</span></p>
+        <p class="b-realty__detail-enum">Год постройки — <span>2006</span></p>
+        <p class="b-realty__detail-price">32 300 &#8364;</p>
+        <div class="b-realty__detail-interest">
+          <a href="#" class="yellow-btn">Заинтересовались?</a>
+          <p class="b-realty__detail-hint">Если Вас заинтересовал объект,
+          оставьте заявку и наши менеджеры свяжутся с Вами!</p>
+        </div><div class="b-realty__detail-links">
+          <a href="#" class="b-iconized-link"><span class="iconize-print"></span><span class="b-link">Распечатать</span></a>
+          <a href="#" class="b-iconized-link"><span class="iconize-mail"></span><span class="b-link">Отправить на E-Mail</span></a>
+          <a href="#" class="b-iconized-link"><span class="iconize-fav2"></span><span class="b-link">Добавить в избранное</span></a>
+        </div>
+        <div class="b-realty__detail-border"></div>
+      </div>
+      <div class="b-realty__description">
+        <div id="rg-gallery" class="rg-gallery">
+          <div class="rg-thumbs">
+            <!-- Elastislide Carousel Thumbnail Viewer -->
+            <div class="es-carousel-wrapper">
+              <div class="es-nav">
+                <span class="es-nav-prev">Предыдущее</span>
+                <span class="es-nav-next">Следующее</span>
+              </div>
+              <div class="es-carousel">
+                <ul>
+                  <li><a href="#"><img src="/f/img/thumbs/img1.jpg" data-large="/f/img/img1.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-2.jpg" data-large="/f/img/img-2.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-3.jpg" data-large="/f/img/img-3.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-4.jpg" data-large="/f/img/img-4.jpg" alt="image01"/></a></li>
+                  <li class="video-slide"><a href="#"><img src="/f/img/thumbs/img-1.jpg" data-large="/f/img/img-1.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-4.jpg" data-large="/f/img/img-4.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img1.jpg" data-large="/f/img/img1.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-2.jpg" data-large="/f/img/img-2.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-3.jpg" data-large="/f/img/img-3.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-4.jpg" data-large="/f/img/img-4.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img-1.jpg" data-large="/f/img/img-1.jpg" alt="image01"/></a></li>
+                  <li><a href="#"><img src="/f/img/thumbs/img1.jpg" data-large="/f/img/img1.jpg" alt="image01"/></a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Elastislide Carousel Thumbnail Viewer -->
+          </div><!-- rg-thumbs -->
+        </div>
+        <h3 class="b-realty__description-title">Описание объекта</h3>
+        <p class="b-realty__description-text">Жилой комплекс Вереда Гольф предлагает квартиры с 2 спальнями и 2 ванными комнатами. Расположен в городе Рокетас-де-Мар, в частной урбанизации с бассейном, теннисным кортом, тренажерным залом, общественным клубом и детской игровой площадкой. Все это в нескольких метрах от моря. Рядом находиться большое поле для гольфа. Жилье оснащено кондиционерами, встроенными шкафами, сигнализацией и видеодомофон.</p>
+        <h3 class="b-realty__description-title b-realty__description-title_map">Объект на карте</h3>
+        <div class="b-switcher b-realty__description-map">
+          <div class="b-switcher__control">
+            <div class="b-switcher__btn b-switcher__btn_1 b-switcher__btn_active">Google Maps</div><div class="b-switcher__btn b-switcher__btn_2">Аэроснимок</div>
+          </div>
+          <div class="b-switcher__block b-switcher__block_1 b-switcher__block_active">
+            <section class="b-realty__goods-map" id="map_canvas"></section>
+          </div>
+          <div class="b-switcher__block b-switcher__block_2">
+            <img src="/f/img/thumbs/img1.jpg" alt="">
+          </div>
+        </div>
+        <h3 class="b-realty__description-title">Модификации</h3>
+        <section class="b-realty__goods b-realty__goods_list b-realty__goods_mods">
+        <div class="b-goods b-goods__head b-goods__table">
+          <div class="b-goods__row">
+            <div class="b-goods__name b-goods__cell"><p>Название объекта</p></div>
+            <div class="b-goods__area b-goods__cell"><p>Площадь</p></div>
+            <div class="b-goods__rooms b-goods__cell"><p>Кол-во комнат</p></div>
+            <div class="b-goods__price b-goods__cell"><p>Цена</p></div>
+          </div>
+        </div>
+        <div class="b-goods b-goods__table">
+          <div class="b-goods__row">
+            <div class="b-goods__description b-goods__cell">
               <div class="b-tags">
                 <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
+              <h4 class="b-goods__header">Urb. La Tercia Golf C/ Collado Gerónimos, 17 Sucina</h4>
+              <span class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</span>
             </div>
-            <div class="b-goods__description">
-              <h2 class="b-goods__header">Duplex Pedro Munoz Duplex Pedro Munoz
-                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
-              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
-              <div class="b-goods__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </div>
-              <div class="b-goods__subtext">Количество Комнат -
-                <span>2</span>
-              </div>
-              <div class="b-goods__price">12 000 &#8364;</div>
+            <div class="b-goods__area b-goods__cell">
+              250м<sup>2</sup>
             </div>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/2.jpg" class="b-picture__img">
+            <div class="b-goods__rooms b-goods__cell">
+              2
+            </div>
+            <div class="b-goods__price b-goods__cell"><div>1 120 000 &#8364;</div></div>
+          </div>
+          <div class="b-goods__border"></div>
+        </div>
+        <div class="b-goods b-goods__table">
+          <div class="b-goods__row">
+            <div class="b-goods__description b-goods__cell">
               <div class="b-tags">
-                <p class="b-tag b-tag_apartments">Вилла</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
+                <p class="b-tag b-tag_apartments">Вилла</p><p class="b-tag b-tag_latest">Новинка!</p>
               </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
+              <h4 class="b-goods__header">Duplex Pedro Munoz</h4>
+              <span class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</span>
             </div>
-            <div class="b-goods__description">
-              <h2 class="b-goods__header">El Parc de la Tossa
-                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
-              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
-              <div class="b-goods__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </div>
-              <div class="b-goods__subtext">Количество Комнат -
-                <span>2</span>
-              </div>
-              <div class="b-goods__price">13 400 &#8364;</div>
+            <div class="b-goods__area b-goods__cell">
+              51м<sup>2</sup>
             </div>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/1.jpg" class="b-picture__img">
-              <div class="b-tags">
-                <p class="b-tag b-tag_apartments">Таунхаус</p>
-              </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
+            <div class="b-goods__rooms b-goods__cell">
+              1
             </div>
-            <div class="b-goods__description">
-              <h2 class="b-goods__header">Edificio Navas - Ramon Vall
-                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
-              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
-              <div class="b-goods__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </div>
-              <div class="b-goods__subtext">Количество Комнат -
-                <span>2</span>
-              </div>
-              <div class="b-goods__price">32 300 &#8364;</div>
-            </div>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
+            <div class="b-goods__price b-goods__cell">5 800 &#8364;<div class="b-goods__border"></div></div>
+          </div>
+        </div>
+      </section>
+      </div>
+    </div>
+    <div class="b_offer b-offer">
+    <h2 class="b-offer__header b-offer__header_more b_offer_h2">Что еще продается в  <a href="#" class="b-iconized-link"><span class="iconize-big-marker"></span><span class="b-link b-link_big">Valencia</span></a> ?</h2>
+    <div class="b-offer__container  container1">
+      <ul id="offer">
+        <li>
+          <div class="b-goods ">
             <div class="b-goods__picture ">
               <img src="/f/img/4.jpg" class="b-picture__img">
               <div class="b-tags">
@@ -191,9 +289,9 @@
               <b class="b-subblocks__tick"></b>
             </div>
             <div class="b-goods__description">
-              <h2 class="b-goods__header">Can Sabat 25
+              <div class="b-goods__header">Can Sabat 25 Can Sabat 25 Can Sabat 25 Can Sabat 25
                 <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
+              </div>
               <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
               <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
@@ -203,60 +301,6 @@
                 <span>2</span>
               </div>
               <div class="b-goods__price">41 600 &#8364;</div>
-            </div>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods">
-            <div class="b-goods__picture">
-              <img src="/f/img/3.jpg" class="b-picture__img">
-              <div class="b-tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
-              </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <div class="b-goods__description">
-              <h2 class="b-goods__header">Duplex Pedro Munoz
-                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
-              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
-              <div class="b-goods__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </div>
-              <div class="b-goods__subtext">Количество Комнат -
-                <span>2</span>
-              </div>
-              <div class="b-goods__price">12 000 &#8364;</div>
-            </div>
-            <div class="b-goods__border"></div>
-          </div><div class="b-goods ">
-            <div class="b-goods__picture ">
-              <img src="/f/img/2.jpg" class="b-picture__img">
-              <div class="b-tags">
-                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
-              </div>
-              <a href="#" class="">
-                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
-              </a>
-              <span class="b-picture__fon"></span>
-              <b class="b-subblocks__tick"></b>
-            </div>
-            <div class="b-goods__description">
-              <h2 class="b-goods__header">El Parc de la Tossa
-                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
-              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
-              <div class="b-goods__subtext">Площадь -
-                <span>51м<b>2</b>
-                </span>
-              </div>
-              <div class="b-goods__subtext">Количество Комнат -
-                <span>2</span>
-              </div>
-              <div class="b-goods__price">13 400 &#8364;</div>
             </div>
             <div class="b-goods__border"></div>
           </div><div class="b-goods ">
@@ -272,9 +316,9 @@
               <b class="b-subblocks__tick"></b>
             </div>
             <div class="b-goods__description">
-              <h2 class="b-goods__header">Edificio Navas - Ramon Vall
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
                 <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
+              </div>
               <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
               <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
@@ -299,9 +343,9 @@
               <b class="b-subblocks__tick"></b>
             </div>
             <div class="b-goods__description">
-              <h2 class="b-goods__header">Edificio Navas - Ramon Vall
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
                 <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
+              </div>
               <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
               <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
@@ -326,9 +370,9 @@
               <b class="b-subblocks__tick"></b>
             </div>
             <div class="b-goods__description">
-              <h2 class="b-goods__header">Can Sabat 25
+              <div class="b-goods__header">Can Sabat 25
                 <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
-              </h2>
+              </div>
               <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
               <div class="b-goods__subtext">Площадь -
                 <span>51м<b>2</b>
@@ -341,87 +385,232 @@
             </div>
             <div class="b-goods__border"></div>
           </div>
-      </section>
-      <div class="b-paginator">
-        <a href="#" class="b-paginator__btn b-paginator__btn_active">1</a>
-        <a href="#" class="b-paginator__btn">2</a>
-        <a href="#" class="b-paginator__btn">3</a>
-        <a href="#" class="b-paginator__btn">4</a>
-        <a href="#" class="b-paginator__btn">5</a>
-        <a href="#" class="b-paginator__btn">6</a>
-        <a href="#" class="b-paginator__btn">7</a>
-        <a href="#" class="b-paginator__btn">8</a>
-        <a href="#" class="b-paginator__btn">9</a>
-        <a href="#" class="b-paginator__btn">10</a>
-        <a href="#" class="b-paginator__btn">11</a>
-        <a href="#" class="b-paginator__btn">12</a>
-        <a href="#" class="b-paginator__btn">13</a>
-        <a href="#" class="b-paginator__btn">14</a>
-        <a href="#" class="b-paginator__btn">15</a>
-        <a href="#" class="b-paginator__btn">16</a>
-        <a href="#" class="b-paginator__btn">17</a>
-        <a href="#" class="b-paginator__btn">18</a>
-        <a href="#" class="b-paginator__btn">19</a>
-        <a href="#" class="b-paginator__btn">20</a>
-        <a href="#" class="b-paginator__btn">21</a>
-        <a href="#" class="b-paginator__btn">22</a>
-        <a href="#" class="b-paginator__btn">23</a>
-        <a href="#" class="b-paginator__btn">24</a>
-        <a href="#" class="b-paginator__btn">25</a>
-        <a href="#" class="b-paginator__btn">26</a>
-        <a href="#" class="b-paginator__btn">27</a>
-        <a href="#" class="b-paginator__btn">28</a>
-        <a href="#" class="b-paginator__btn">29</a>
-        <a href="#" class="b-paginator__btn">30</a>
-      </div>
-    </div>
-    <div class="b-filter">
-      <div id="wrapper" class="tab1">
-        <a href="#" id="win_a" class="tab1">
-          <span class="wrapper_a">На побережье</span>
-        </a><a href="#" id="win_a" class="tab2">
-          <span class="wrapper_a">По географии</span>
-        </a>
-        <div class="div_none tab1 b-tab__coast">
-          <p class="b-coast__img"></p>
-          <div class="b-filter__control">
-            <select class="b-filter__select b-filter__select_1 b-select-input" multiple  title="Город">
-              <option>Галисия</option>
-              <option>Астурия</option>
-              <option>Арагон</option>
-            </select>
-            <select class="b-filter__select b-filter__select_2 b-select-input" multiple title="Регион">
-              <option>Галисия</option>
-              <option>Астурия</option>
-              <option>Арагон</option>
-            </select>
-            <div class="b-slider-range">
-              <span class="b-filter__text">Цена</span>
-              <input type="text" class="b-input-text b-slider-range__input b-slider-range__input_1"><div class="b-slider-range__sep"></div><input type="text" class="b-input-text b-slider-range__input b-slider-range__input_2"><div class="b-slider-range__euro-wrap"><span class="b-slider-range__euro">&#8364;</span></div>
-              <div class="b-slider-range__holder"></div>
+        </li> 
+        <li>
+          <div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
             </div>
-            <span class="b-filter__text">Тип объекта</span>
-            <select class="b-filter__select b-filter__select_3 b-select-input">
-              <option>Любой</option>
-              <option>Апартаменты</option>
-              <option>Вилла</option>
-              <option>Таунхаус</option>
-            </select>
-            <input id="b-type1" class = "b-radio-input" type="radio" name = "b-type" checked />
-            <label class = "b-radio"  for="b-type1">Новостройка</label>
-            <input id="b-type2" class = "b-radio-input" type="radio" name = "b-type"/>
-            <label class = "b-radio"  for="b-type2">Вторичный рынок</label>
-            <span class="b-filter__text">Номер лота</span>
-            <input class="b-input-text b-type__lot" type="text" value="" placeholder="Введите номер лота">
-            <div class="b-coast__button" style="clear: both;">
-              <button class="yellow-btn"><span class="iconize-search"></span>Найти</button>
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
             </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
           </div>
-        </div>
-        <div class="div_none tab2 b-tab__geography">dsfsdfdsfsdfdsf</div>
-      </div>
-      <div class="b-coast__border_bottom"></div>
+        </li> 
+        <li>
+          <div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <a href="#" class="">
+                <p class="b-picture__more"><span class="yellow-btn">Подробнее</span></p>
+              </a>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <div class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </div>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div>
+        </li> 
+      </ul>
     </div>
+  </div>
   </section>
   <footer class="b-footer">
     <div class="b-footer__table">

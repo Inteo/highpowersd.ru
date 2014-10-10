@@ -14,72 +14,64 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,600,300,700,300italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <script src="/f/js/jquery-ui.js"></script>
-   <script>
-    $(function(){
-      $(".b-filter__select_1").selectpicker({
-        style: "b-select-input"
-      });
-      $(".b-filter__select_2").selectpicker({
-        style: "b-select-input"
-      });
-    });
-  </script>
 </head>
 <body>
   <header class="b-header">
-    <a href="/">
+    <div class="b-header__content">
       <h1 class="b-logo">
-        High Power
-        <span class="b-logo__char">SD</span>
-        <p class="b-logo__text">Недвижимость в Испании</p>
+        <a href="/">
+          High Power
+          <span class="b-logo__char">SD</span>
+          <span class="b-logo__text">Недвижимость в Испании</span>
+        </a>
       </h1>
-    </a>
-    <ul class="b-main-menu">
-      <li class="b-main-menu__item">
-        <div class="iconize-realty"></div>
-        <a href="#" class="b-link">Недвижимость</a>
-      </li>
-      <li class="b-main-menu__item">
-        <div class="iconize-boat"></div>
-        <a href="#" class="b-link">Яхты</a>
-      </li>
-      <li class="b-main-menu__item">
-        <div class="iconize-lease"></div>
-        <a href="#" class="b-link">Аренда</a>
-      </li>
-      <li class="b-main-menu__item">
-        <a href="#" class="b-link">О компании</a>
-      </li>
-      <li class="b-main-menu__item">
-        <a href="#" class="b-link">Услуги</a>
-      </li>
-      <li class="b-main-menu__item">
-        <a href="#" class="b-link">Контакты</a>
-      </li>
-    </ul>
-    <div class="b-contacts b-contacts_header">
-      <div class="b-contacts__item">
-        <p class="b-contacts__city">
-          <span class="iconize-moscow"></span>
-          <span class="b-contacts__city-text">Москва</span>
-        </p>
-        <p class="b-contacts__phone">
-          <span class="b-contacts__phone-small">+7 (495)</span>540-34-23
-          <span class="iconize-skype"></span>
-        </p>
-      </div>
-      <div class="b-contacts__item">
-        <p class="b-contacts__city">
-          <span class="iconize-alicante"></span>
-          <span class="b-contacts__city-text">Аликанте</span>
-        </p>
-        <p class="b-contacts__phone">
-          <span class="b-contacts__phone-small">+34 (965)</span>23-57-00
-          <span class="iconize-skype"></span>
-        </p>
-      </div>
-      <div class="b-contacts__callback">
-        <a href="#" class="b-link">Заказать обратный звонок</a>
+      <ul class="b-main-menu">
+        <li class="b-main-menu__item">
+          <div class="iconize-realty"></div>
+          <a href="#" class="b-link">Недвижимость</a>
+        </li>
+        <li class="b-main-menu__item">
+          <div class="iconize-boat"></div>
+          <a href="#" class="b-link">Яхты</a>
+        </li>
+        <li class="b-main-menu__item">
+          <div class="iconize-lease"></div>
+          <a href="#" class="b-link">Аренда</a>
+        </li>
+        <li class="b-main-menu__item">
+          <a href="#" class="b-link">О компании</a>
+        </li>
+        <li class="b-main-menu__item">
+          <a href="#" class="b-link">Услуги</a>
+        </li>
+        <li class="b-main-menu__item">
+          <a href="#" class="b-link">Контакты</a>
+        </li>
+      </ul>
+      <div class="b-contacts b-contacts_header">
+        <div class="b-contacts__item">
+          <p class="b-contacts__city">
+            <span class="iconize-moscow"></span>
+            <span class="b-contacts__city-text">Москва</span>
+          </p>
+          <p class="b-contacts__phone">
+            <span class="b-contacts__phone-small">+7 (495)</span>540-34-23
+            <span class="iconize-skype"></span>
+          </p>
+        </div>
+        <div class="b-contacts__item">
+          <p class="b-contacts__city">
+            <span class="iconize-alicante"></span>
+            <span class="b-contacts__city-text">Аликанте</span>
+          </p>
+          <p class="b-contacts__phone">
+            <span class="b-contacts__phone-small">+34 (965)</span>23-57-00
+            <span class="iconize-skype"></span>
+          </p>
+        </div>
+        <div class="b-contacts__callback">
+          <a href="#" class="b-link">Заказать обратный звонок</a>
+        </div>
       </div>
     </div>
   </header>
@@ -143,8 +135,7 @@
     </div>
     <div class="b-slider__border_bottom"></div>
     <div class="b-slider__info">
-      <p class="b-info__city">Zamora, Spain</p><p class="b-info__see"><a href="#" class="b-info__see_link b-link"><b class="b-info__see_img"></b>Посмотреть недвижимость тут</a>
-      </p>
+      <p class="b-info__city">Zamora, Spain</p><a href="#" class="b-info__see b-iconized-link"><span class="iconize-marker"></span><span class="b-link">Посмотреть недвижимость тут</span></a>
     </div>
   </div>
   <div class="b-services b-enum b-enum_inline_4">
@@ -184,7 +175,7 @@
               <b class="b-subblocks__tick"></b>
             </div>
             <div class="b-goods__description">
-              <div class="b-goods__header">El Parc de la Tossa 
+              <div class="b-goods__header">El Parc de la Tossa  El Parc de la Tossa El Parc de la Tossa
                 <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
               </div>
               <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
@@ -265,7 +256,7 @@
               <b class="b-subblocks__tick"></b>
             </div>
             <div class="b-goods__description">
-              <div class="b-goods__header">Duplex Pedro Munoz
+              <div class="b-goods__header">Duplex Pedro Munoz Duplex Pedro Munoz Duplex Pedro Munoz Duplex Pedro Munoz Duplex Pedro Munoz
                 <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
               </div>
               <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>

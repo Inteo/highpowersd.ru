@@ -173,7 +173,7 @@ $(function() {
 $(function() {
   $('#offer').slidesjs2({
     width: 1180,
-    height: 740,
+    autoHeight: true,
     navigation: false
   });
 });
@@ -204,8 +204,11 @@ $(function() {
   })
 })
 /*FORMA2 END*/
-
+$(window).resize(function(){
+  equalheight(".b-goods");
+});
 $(document).ready(function() {
+  equalheight(".b-goods");
   $('input, textarea').placeholder();
   $(".b-sort__select").selectpicker({
     style: "b-select-input"
@@ -253,4 +256,56 @@ $(function() {
       $(this).parent(".b-slider-range").find(".b-slider-range__holder").slider("values", input, $(this).val());
     }
   });
+  $(".b-switcher__btn").click(function() {
+     $(this).parent().children(".b-switcher__btn").removeClass("b-switcher__btn_active");
+     $(this).addClass("b-switcher__btn_active");
+     $(this).parent().children(".b-switcher__block").removeClass("b-switcher__block_active");
+     $(this).parent().parent().children(".b-switcher__block").removeClass("b-switcher__block_active");
+     var theClass = $(this).attr("class");
+     var theClasses = theClass.match(/\w+|"[^"]+"/g);
+     var str = theClasses.join(' ');
+     var num = parseInt(str.replace(/\D+/g, ""));
+     var cls = ".b-switcher__block_" + num;
+     $(this).parent().children(cls).addClass("b-switcher__block_active");
+     $(this).parent().parent().children(cls).addClass("b-switcher__block_active");
+     return false;
+   });
 });
+equalheight = function(container){
+
+var currentTallest = 0,
+    currentRowStart = 0,
+    rowDivs = new Array(),
+    $el,
+    topPosition = 0,
+    total_height = 0;
+  $(container).each(function() {
+    if($(this).is(":visible")) {
+      $el = $(this);
+      $($el).height('auto')
+      topPostion = $el.position().top;
+      if (currentRowStart != topPostion) {
+        for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+          rowDivs[currentDiv].height(currentTallest);
+        }
+        rowDivs.length = 0; // empty the array
+        currentRowStart = topPostion;
+        currentTallest = $el.height();
+        rowDivs.push($el);
+      }else {
+        rowDivs.push($el);
+        currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+      }
+      for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+        rowDivs[currentDiv].height(currentTallest);
+      }
+     
+    }
+  });
+  $(container).each(function() {
+     $(this).find(".b-goods__description").height($(this).height() - $(this).find(".b-goods__picture ").outerHeight() - ($(this).find(".b-goods__description").outerHeight() - $(this).find(".b-goods__description").height()));
+  });
+  if($el) {
+    $el.parent().parent().parent(".slidesjs-container2").height($el.parent().height());
+  }
+}
