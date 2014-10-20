@@ -161,9 +161,8 @@
 $(function() {
   $('#slides').slidesjs({
     width: 1280,
-    height: 480,
+    autoHeight: true,
     play: {
-
       auto: true,
       interval: 4000,
       swap: true
@@ -250,7 +249,7 @@ $(function() {
     }
     if (parseInt($(".b-slider-range__input_2").val()) < parseInt($(".b-slider-range__input_1").val())) {
       var val = parseInt($(this).parent(".b-slider-range").find(".b-slider-range__holder").slider("values", 0));
-      console.log(val);
+      //console.log(val);
       $(this).parent(".b-slider-range").find(".b-slider-range__holder").slider("values", 1, val);
     } else {
       $(this).parent(".b-slider-range").find(".b-slider-range__holder").slider("values", input, $(this).val());
@@ -270,6 +269,19 @@ $(function() {
      $(this).parent().parent().children(cls).addClass("b-switcher__block_active");
      return false;
    });
+  $(".b-region__show-btn").click(function() {
+    if($(this).parent(".b-region__show").hasClass("b-region__show_active")) {
+      $(this).parent(".b-region__show").removeClass("b-region__show_active");
+    }
+    else {
+      $(this).parent(".b-region__show").addClass("b-region__show_active");
+    }
+  });
+  $(".slidesjs-pagination2-item").click(function(){
+    setTimeout(function(){
+      equalheight(".b-goods");
+    }, 500);
+  });
 });
 equalheight = function(container){
 
@@ -280,7 +292,7 @@ var currentTallest = 0,
     topPosition = 0,
     total_height = 0;
   $(container).each(function() {
-    if($(this).is(":visible")) {
+    if($(this).is(":visible") && !$(this).parent().hasClass("b-goods-enum_list")) {
       $el = $(this);
       $($el).height('auto')
       topPostion = $el.position().top;
@@ -302,9 +314,9 @@ var currentTallest = 0,
      
     }
   });
-  $(container).each(function() {
+  /*$(container).each(function() {
      $(this).find(".b-goods__description").height($(this).height() - $(this).find(".b-goods__picture ").outerHeight() - ($(this).find(".b-goods__description").outerHeight() - $(this).find(".b-goods__description").height()));
-  });
+  });*/
   if($el) {
     $el.parent().parent().parent(".slidesjs-container2").height($el.parent().height());
   }
