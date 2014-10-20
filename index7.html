@@ -1,0 +1,440 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <title>High Power</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="/f/js/jquery.slides.min.js"></script>
+  <script type="text/javascript" src="/f/js/common.js"></script>
+  <script type="text/javascript" src="/f/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/f/js/bootstrap-select.min.js"></script>
+  <script src="/f/js/jquery-ui.js"></script>
+  <script src="/f/js/jquery.mCustomScrollbar.js"></script>
+  <link rel="stylesheet" type="text/css" href="/f/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" type="text/css" href="/f/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="/f/css/jquery-ui.css" />
+  <link rel="stylesheet" href="/f/css/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" type="text/css" href="/f/css/main.css" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,300,700,300italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <script>
+    $(document).ready(function(){
+    $(".b-island__scroll").mCustomScrollbar({
+      axis: "x",
+      scrollbarPosition: "outside",
+      scrollInertia: 200,
+      autoDraggerLength: false,
+   });
+    var total_width = 0;
+    $(".b-island__scroll").find("img").each(function(){
+      total_width = total_width + $(this).width();
+    });
+    $(".b-island__scroll").find(".b-island__scroll-holder").width(total_width);
+  });
+  </script>
+</head>
+<body>
+  <header class="b-header">
+    <div class="b-header__content">
+      <a href="/">
+        <p class="b-logo">
+          High Power
+          <span class="b-logo__char">SD</span>
+          <span class="b-logo__text">Недвижимость в Испании</span>
+        </p>
+      </a>
+      <ul class="b-main-menu">
+        <li class="b-main-menu__item">
+          <div class="iconize-realty"></div>
+          <a href="#" class="b-link">Недвижимость</a>
+        </li>
+        <li class="b-main-menu__item">
+          <div class="iconize-boat"></div>
+          <a href="#" class="b-link">Яхты</a>
+        </li>
+        <li class="b-main-menu__item">
+          <div class="iconize-lease"></div>
+          <a href="#" class="b-link">Аренда</a>
+        </li>
+        <li class="b-main-menu__item">
+          <a href="#" class="b-link">О компании</a>
+        </li>
+        <li class="b-main-menu__item">
+          <a href="#" class="b-link">Услуги</a>
+        </li>
+        <li class="b-main-menu__item">
+          <a href="#" class="b-link">Контакты</a>
+        </li>
+      </ul>
+      <div class="b-contacts b-contacts_header">
+        <div class="b-contacts__item">
+          <p class="b-contacts__city">
+            <span class="iconize-moscow"></span>
+            <span class="b-contacts__city-text">Москва</span>
+          </p>
+          <p class="b-contacts__phone">
+            <span class="b-contacts__phone-small">+7 (495)</span>540-34-23
+            <span class="iconize-skype"></span>
+          </p>
+        </div>
+        <div class="b-contacts__item">
+          <p class="b-contacts__city">
+            <span class="iconize-alicante"></span>
+            <span class="b-contacts__city-text">Аликанте</span>
+          </p>
+          <p class="b-contacts__phone">
+            <span class="b-contacts__phone-small">+34 (965)</span>23-57-00
+            <span class="iconize-skype"></span>
+          </p>
+        </div>
+        <div class="b-contacts__callback">
+          <a href="#" class="b-link">Заказать обратный звонок</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <h1 class="b-main-title b-main-title_arrow b-main-title_arrow_grey">Путеводитель</h1>
+  <section class="b-main">
+    <div class="b-control">
+      <a href="/index2.html" class="b-control__back b-iconized-link"><span class="iconize-back"></span><span class="b-link">Вернуться к списку городов и районов</span></a>
+    </div>
+    <div class="b-content b-content_full">
+      <div class="b-island">
+        <p class="b-island__title">Остров <span>Майорка</span></p> 
+        <span class="b-island__cities">Города:</span>
+        <a href="#" class="b-iconized-link b-island__cities-link"><span class="iconize-marker"></span><span class="b-link">Пальма-де-Майорка</span></a>
+        <a href="#" class="b-iconized-link b-island__cities-link"><span class="iconize-marker"></span><span class="b-link">Польенса</span></a>
+        <div class="b-island__cities-btn">
+          <a href="#" class="yellow-btn">Посмотреть недвижимость</a>
+        </div>
+        <div class="b-island__scroll-wrap">
+          <div class="b-island__scroll">
+            <div class="b-island__scroll-holder">
+              <img src="/f/img/scroller-img1.jpg" alt=""><img src="/f/img/scroller-img2.jpg" alt=""><img src="/f/img/scroller-img1.jpg" alt=""><img src="/f/img/scroller-img2.jpg" alt=""><img src="/f/img/scroller-img1.jpg" alt=""><img src="/f/img/scroller-img2.jpg" alt=""><img src="/f/img/scroller-img1.jpg" alt=""><img src="/f/img/scroller-img2.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-island__scroll-mask"></div>
+        </div>
+        <p class="b-island__text">Тропическим пляжам Майорки завидуют все европейцы. Недаром остров стал местом массового паломничества жителей зажиточных западных стран – немцев, англичан, датчан и голландцев. Даже искушенных комфортом иностранцев не оставляют равнодушными мягкий климат, высокие температуры круглый календарный год и береговая линия пляжей, подобная раю на земле. По принципу «все лучшее детям» Майорку ежегодно оккупируют родители с отпрысками разных возрастов. Соответственно и местные подстроили свой бизнес под главную целевую аудиторию – каких только аттракционов не создано для семейного отдыха! Можно смело сказать, что самый крупный кусок суши всего Балеарского архипелага работает на счастливое детство и супружество.</p>
+      </div>
+      <section class="b-goods-enum b-goods-enum_tiles">
+        <p class="b-goods-enum__title">Недвижимость на <a href="#" class="b-link">острове Майорка</a></p>
+        <div class="b-goods">
+            <div class="b-goods__picture">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">Duplex Pedro Munoz
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">12 000 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Вилла</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Таунхаус</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/4.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_hot">Горячее предложение!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">Can Sabat 25
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Valencia</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">41 600 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods">
+            <div class="b-goods__picture">
+              <img src="/f/img/3.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">Duplex Pedro Munoz
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">12 000 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/1.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">Edificio Navas - Ramon Vall
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Roda de Ter</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">32 300 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div><div class="b-goods ">
+            <div class="b-goods__picture ">
+              <img src="/f/img/2.jpg" class="b-picture__img">
+              <div class="b-tags">
+                <p class="b-tag b-tag_apartments">Аппартаменты</p><p class="b-tag b-tag_latest">Новинка!</p>
+              </div>
+              <div class="b-picture__more"><span class="yellow-btn yellow-btn_passive">Подробнее</span></div>
+              <span class="b-picture__fon"></span>
+              <b class="b-subblocks__tick"></b>
+            </div>
+            <div class="b-goods__description">
+              <p class="b-goods__header">El Parc de la Tossa
+                <b class="b-header__fav" onclick="this.className = (this.className == 'b-header__fav' ? 'b-header__fav_active' : 'b-header__fav')"></b>
+              </p>
+              <div class="b-goods__city"><b class="b-goods__city_img"></b>Manresa</div>
+              <div class="b-goods__subtext">Площадь -
+                <span>51м<b>2</b>
+                </span>
+              </div>
+              <div class="b-goods__subtext">Количество Комнат -
+                <span>2</span>
+              </div>
+              <div class="b-goods__price">13 400 &#8364;</div>
+            </div>
+            <div class="b-goods__border"></div>
+          </div>
+          <div class="b-more-block">
+            <a href="#" class="b-more-block__btn yellow-btn"><span class="iconize-show"></span>Показать еще</a>  
+            <a href="#" class="b-more-block__link b-link">Посмотреть все объекты</a>
+          </div>
+      </section>
+    </div>
+  </section>
+  <footer class="b-footer">
+    <div class="b-footer__table">
+      <div class="b-footer__row">
+        <div class="b-footer__cell">
+          <p class="b-footer__title">Недвижимость</p>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Квартиры (аппартаменты)</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Дома</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Виллы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Таунхаусы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Коммерческая недвижимость</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <p class="b-footer__title">Аренда</p>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Недвижимость</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Яхты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Самолёты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Вертолёты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Автомобили</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <p class="b-footer__title">Услуги</p>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Услуги банка</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Бронирование гостиницы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Документы</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Покупка авиабилетов</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <p class="b-footer__title">О компании</p>
+          <ul class="b-footer-menu">
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Сертификаты</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Команды</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Отзывы клиентов</a>
+            </li>
+            <li class="b-footer-menu__item"><a href="#" class="b-link">Новости</a>
+            </li>
+          </ul>
+        </div>
+        <div class="b-footer__cell">
+          <p class="b-footer__title">Яхта</p>
+        </div>
+        <div class="b-footer__cell">
+          <div class="b-contacts b-contacts_footer">
+            <div class="b-contacts__item">
+              <p class="b-contacts__city">
+                <span class="iconize-moscow"></span>
+                <span class="b-contacts__city-text">Москва</span>
+              </p><p class="b-contacts__phone">
+                <span class="b-contacts__phone-small">+7 (495)</span>540-34-23
+                <span class="iconize-skype"></span>
+              </p>
+            </div>
+            <div class="b-contacts__item">
+              <p class="b-contacts__city">
+                <span class="iconize-alicante"></span>
+                <span class="b-contacts__city-text">Аликанте</span>
+              </p><p class="b-contacts__phone">
+                <span class="b-contacts__phone-small">+34 (965)</span>23-57-00
+                <span class="iconize-skype"></span>
+              </p>
+            </div>
+            <div class="b-contacts__callback">
+              <a href="#" class="b-link">Заказать обратный звонок</a>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="popup-credit" style="display:none;">
+    <form action="." method="post" id="mail_form" class="b-forma">
+      <a href="#" class="b-forma_close cancelComment" id="toggler"></a>
+      <p class="b-forma__head" id="demo-link">Заказать</br>обратный звонок</p>
+      <p class="b-forma__title">Имя</p>
+      <input class="b-forma__input" type="text" size="25" name="name" id="name" value=" ">
+      <p class="b-forma__title">Телефон</p>
+      <input class="b-forma__input" type="text" size="25" name="tel" id="tel" value=" ">
+      <p class="b-forma__title">Комментарии к звонку</p>
+      <textarea class="b-forma__input b-forma__comments" cols="30" rows="5" name="text" id="text" value="Темы и время звонка"></textarea>
+      <input class="b-forma__submit yellow-btn" type="submit" name="submit" id="submit" value="Отправить">
+    </form>
+  </div>
+  <script>
+  $('#wrapper a').click(function() {
+    if ($(this).attr('class') != $('#wrapper').attr('class')) {
+      $('#wrapper').attr('class', $(this).attr('class'));
+    }
+  });
+  </script>
+</body>
+</html>
