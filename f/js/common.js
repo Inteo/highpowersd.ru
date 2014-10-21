@@ -277,6 +277,14 @@ $(function() {
       $(this).parent(".b-region__show").addClass("b-region__show_active");
     }
   });
+  $(".b-enum__item_scroll").find(".b-enum__title").click(function(){
+    $(this).parent(".b-enum__item_scroll").addClass("b-enum__item_active");
+    $(this).parent(".b-enum__item_scroll").parent().parent().find(".b-enum__scroll-block").addClass("b-enum__scroll-block_active");
+  });
+  $(".b-enum__close").click(function(){
+    $(this).parent(".b-enum__item_scroll").removeClass("b-enum__item_active");
+    $(this).parent(".b-enum__item_scroll").parent().parent().find(".b-enum__scroll-block").removeClass("b-enum__scroll-block_active");
+  });
   $(".slidesjs-pagination2-item").click(function(){
     setTimeout(function(){
       equalheight(".b-goods");
