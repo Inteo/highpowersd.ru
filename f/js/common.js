@@ -282,8 +282,10 @@ $(function() {
     $(this).parent(".b-enum__item_scroll").parent().parent().find(".b-enum__scroll-block").addClass("b-enum__scroll-block_active");
   });
   $(".b-enum__close").click(function(){
-    $(this).parent(".b-enum__item_scroll").removeClass("b-enum__item_active");
-    $(this).parent(".b-enum__item_scroll").parent().parent().find(".b-enum__scroll-block").removeClass("b-enum__scroll-block_active");
+    $(this).parent(".b-enum__scroll-block").removeClass("b-enum__scroll-block_active");
+    var block_id = $(this).parent(".b-enum__scroll-block").attr("id");
+    var item_id = "#enum__item_scroll_" + block_id.match(/(\d+)$/)[1];
+    $(item_id).removeClass("b-enum__item_active");
   });
   $(".slidesjs-pagination2-item").click(function(){
     setTimeout(function(){
